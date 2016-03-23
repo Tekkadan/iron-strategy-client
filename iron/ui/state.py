@@ -13,6 +13,7 @@ class StateManager(urwid.WidgetWrap):
 
     def push_screen(self, screen):
         self.state.append(screen)
+        self._w = self.peek()
         self._show_stack()
 
     def pop_screen(self):
