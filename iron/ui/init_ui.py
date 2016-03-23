@@ -14,7 +14,6 @@ class Application:
         self.game_state = StateManager(self, WelcomeScreen())
         self.evl = urwid.AsyncioEventLoop(loop=asyncio.get_event_loop())
         self.loop = urwid.MainLoop(self.game_state, event_loop=self.evl)
-        print (self.game_state)
 
     def start(self):
         self.loop.run()
