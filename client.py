@@ -1,4 +1,4 @@
 import urwid
-from iron.ui import init_ui
+from iron.ui.init_ui import ui_init
 
-loop_init()
+ui_init()

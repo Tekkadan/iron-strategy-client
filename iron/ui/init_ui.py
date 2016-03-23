@@ -1,16 +1,15 @@
 import urwid
+from iron.ui.state import StateManager
 
 basepalette = [
-        ('banner', 'black', 'light gray', 'bold'),
-        ('streak', 'black,' 'dark red'),
-        ('bg', 'black', 'dark blue'),]
+    ('banner', 'black', 'light gray', 'bold'),
+    ('streak', 'black,' 'dark red'),
+    ('bg', 'black', 'dark blue'),]
 
-def loop_init():
+def ui_init():
     placeholder = urwid.SolidFill()
-    gameLoop = urwid.AsyncioEventLoop(placeholder, basepalette)
-    gameLoop.screen.set_terminal_properties(colors=256)
-    gameLoop.widget = urwid.AttrMap(placeholder, 'banner')
-    gameLoop.widget.base_widget = GameState(loop)
+    gameLoop = urwid.AsyncioEventLoop()
+    gameLoop.widget = StateManager('initial')
 
     gameLoop.run()
 
