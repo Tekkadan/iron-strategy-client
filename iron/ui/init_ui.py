@@ -11,7 +11,7 @@ basepalette = [
 class Application:
 
     def __init__(self):
-        self.game_state = StateManager(self, WelcomeScreen())
+        self.game_state = StateManager(self, WelcomeScreen(self))
         self.evl = urwid.AsyncioEventLoop(loop=asyncio.get_event_loop())
         self.loop = urwid.MainLoop(self.game_state, event_loop=self.evl)
 
