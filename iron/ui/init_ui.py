@@ -5,8 +5,12 @@ basepalette = [
         ('streak', 'black,' 'dark red'),
         ('bg', 'black', 'dark blue'),]
 
-placeholder = urwid.SolidFill()
-gameLoop = urwid.AsyncioEventLoop(placeholder, palette)
-gameLoop.screen.set_terminal_properties(colors=256)
-gameLoop.widget = urwid.AttrMap(placeholder, 'banner')
-gameLoop.widget.base_widget = GameState(loop)
+def loop_init():
+    placeholder = urwid.SolidFill()
+    gameLoop = urwid.AsyncioEventLoop(placeholder, basepalette)
+    gameLoop.screen.set_terminal_properties(colors=256)
+    gameLoop.widget = urwid.AttrMap(placeholder, 'banner')
+    gameLoop.widget.base_widget = GameState(loop)
+
+    gameLoop.run()
+
