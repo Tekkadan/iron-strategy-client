@@ -11,7 +11,7 @@ class WelcomeScreen(urwid.WidgetWrap):
         if key == 'p':
             self.game.game_state.push_screen(PlayScreen(self.game))
         elif key == 'q':
-            self.game.ExitMainLoop()
+            self.game.quit()
 
     def selectable(self):
         return True
