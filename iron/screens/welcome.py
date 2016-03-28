@@ -1,4 +1,6 @@
 import urwid
+
+from pyfiglet import figlet_format
 from .play import PlayScreen
 
 class WelcomeScreen(urwid.WidgetWrap):
@@ -18,5 +20,5 @@ class WelcomeScreen(urwid.WidgetWrap):
 
     def build(self):
         return urwid.AttrMap(urwid.Filler(
-                urwid.AttrMap(urwid.Text('Iron Strategy', align='center'), 'banner')
+                urwid.AttrMap(urwid.Text('\n'+figlet_format('IRON STRATEGY', font='banner3'), align='center'), 'banner')
                 ), 'bg')
