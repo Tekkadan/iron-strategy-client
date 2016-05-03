@@ -5,6 +5,7 @@ from iron.screens.welcome import WelcomeScreen
 
 basepalette = [
     ('banner', 'black', 'light gray'),
+    ('inverted', 'light gray', 'black'),
     ('streak', 'black', 'dark green'),
     ('bg', 'black', 'dark blue'),]
 
